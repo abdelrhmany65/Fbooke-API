@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- link css  -->
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+
+
+
+    <!-- rigsterModel  -->
+    <button type="button" class="rigbtn" data-bs-toggle="modal" data-bs-target="#modelrigster" data-bs-whatever="@mdo"></button>
+
+    <div class="modal fade" id="modelrigster" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">login</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">profil image:</label>
+                  <input type="file" class="form-control" id="image-rigster">
+                </div>
+                <label for="email-rigster" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email-rigster" placeholder="name@example.com">              
+              </div>
+              <div class="mb-3">
+                <label for="password-rigster" class="form-label">Password</label>
+                <input type="password" id="password-rigster" class="form-control" aria-describedby="passwordHelpBlock">                
+              </div>
+              <div class="mb-3">
+                <label for="username-rigster" class="form-label">username</label>
+                <input type="text" id="username-rigster" class="form-control" aria-describedby="passwordHelpBlock">                
+              </div>
+              <div class="mb-3">
+                <label for="name-rigster" class="form-label">name</label>
+                <input type="text" id="name-rigster" class="form-control" aria-describedby="passwordHelpBlock">                
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cansle</button>
+            <button type="button" class="btn btn-primary" onclick="Btnrigster()">login</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /rigsterModel  -->
+    <!-- login  -->
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"></button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Login..</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+
+              <div class="mb-3 row">
+                <label for="login-Email" class="col-sm-2 col-form-label">name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="login-Email" value="Yy111">
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label for="login-Password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="login-Password" value="123456">
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btnlogin" onclick="loginbtnclicked()">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /login  -->
+
+    <!-- btnpost  -->
+    <button class="btnpost" id="creatpost" onclick="addBtnClick()">+</button>
+
+    <div class="modal fade" id="btn-post-creat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="title-edite">creat a new post </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Title:</label>
+                <input type="text" class="form-control" id="title-post">
+                <input type="hidden" class="form-control" id="is-title-edite" value="">
+
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control" id="body-post" rows="3"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Image:</label>
+                <input type="file" class="form-control" id="image-post">
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="post-modal-btn" type="button" class="btn btn-primary" onclick="btncreatpost()">creat a post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /btnpost  -->
+
+
+    <!-- Deletpost  -->
+    <div class="modal fade" id="delet-post-model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="title-edite">Are you sure you want to delet the post?
+              <span id="delet-post-title"></span></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <input type="hidden" class="form-control" id="delet-post" value="">
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="post-modal-btn" type="button" class="btn btn-danger" onclick="confirmdelet()">delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Deletpost  -->
+
+
+
+    <!-- nav  -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary container rounded col-6">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tarmeez</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="pofileClick()" style="cursor:pointer">profile</a>
+            </li>
+          </ul>
+          <div class="d-flex w-100 justify-content-end">
+            <button type="button" class="btn btn-outline-success mx-2" id="btn-log" data-bs-toggle="modal" data-bs-target="#exampleModal">login</button>
+            <button type="button" class="btn btn-outline-success" id="btn-reg" data-bs-toggle="modal" data-bs-target="#modelrigster">register</button>
+            <div id="logout-div" class="loged-out d-flex w-100 justify-content-end align-items-center">
+               <img src="./img/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="image" class="rounded-circle" id="image-nave">
+              <b id="name-nave" class="mx-2">@name</b>
+              <button type="button" class="btn btn-outline-danger" id="btnout" onclick="logeout()">logout</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- /nav  -->
+
+    <!-- main  -->
+    <div class="main container col-6">
+      <!-- posts  -->
+      <div class="posts mt-5" id="info-post">
+
+        <div class="card my-5">
+            <div class="card-body">
+                <div class="row">
+                    <!-- userimg  -->
+                    <div class="col-2">
+                        <img id="image-header" class="rounded-circle border-2" src="./img/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="" srcset="">
+                    </div>
+                    <!--/ userimg  --> 
+                    <!-- username  -->
+                    <div class="col-4 d-flex flex-column justify-content-evenly fs-4">
+                        <div id="info-email">
+                            abdogmail.com
+                        </div>
+                        <div id="info-name">
+                            abdo
+                        </div>
+                        <div id="info-username">
+                            abdo123
+                        </div>
+                    </div>
+                    <!-- /username  -->
+                    <!-- numerpost  -->
+                    <div class="col-4 d-flex flex-column justify-content-evenly fs-4">
+                        <div class="number-info">
+                            <span id="posts-count">2</span>posts
+                        </div>
+
+                        <div class="number-info">
+                            <span id="comment-count">12</span>comment
+                        </div>
+                    </div>
+                    <!-- /numerpost  -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+          <h1><span id="info-name"> abdo </span> posts</h1>
+        </div>
+        <!-- post  -->
+        <div class="row" id="info-user-post">
+          <div class="card my-5">
+            <div class="card-header">
+              <img src="./img/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="img" class="rounded-circle border-2">
+              <b>@abdelrhman</b>
+            </div>
+            <div class="card-body">
+              <img src="./img/dino-reichmuth-A5rCN8626Ck-unsplash.jpg" alt="" class="w-100">
+              <h6>2min ago</h6>
+            
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <hr>
+              <i class="bi bi-chat"></i>
+              <span>
+                (3)comment
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- post  -->
+
+      </div>
+      <!-- posts  -->
+    </div>
+    <!--/ main  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- axios  -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- js  -->
+  <script src="./main.js"></script>
+  
+</html>
